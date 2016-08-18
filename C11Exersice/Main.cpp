@@ -33,10 +33,12 @@ struct C
 int main(int argc, char* argv[])
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
 	std::string str = "bb";
 	Singleton<A>::Instance(str);
 	Singleton<B>::Instance(std::move(str));
 	Singleton<A>::DestroyInstace();
 	Singleton<B>::DestroyInstace();
+
 	system("pause");
 }
